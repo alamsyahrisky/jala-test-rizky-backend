@@ -71,10 +71,6 @@
                                 <label for="exampleInputEmail1" class="form-label">Confrim Password</label>
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                            
-                            <div class="mb-3 form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            </div>
                             <button type="submit" class="btn btn-login btn-block w-100">Submit</button>
                             <p class="text-center mt-4">
                                 <a href="{{ route('login') }}"> Already exists account ?</a>

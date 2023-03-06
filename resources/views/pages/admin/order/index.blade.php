@@ -73,7 +73,7 @@
                 </div>
                 <form action="#" method="POST" autocomplete="off" id="form-status">
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Status</label>
@@ -146,7 +146,7 @@
                     },
                     {
                         data: 'name', 
-                        name: 'name'
+                        name: 'users.name'
                     },
                     {
                         data: 'date', 
@@ -204,7 +204,20 @@
                     })
                 }
             });
+
+            table.on( 'draw', function () {
+                $('.btn_update_status').click(function(event) {
+                    let id = $(this).data('id');
+                    let status = $(this).data('status');
+        
+                    $('#status').val(status)
+        
+                    $('#form-status').attr('action','{{url("admin/order")}}'+'/'+id);
+                    
+                })
+            });
         });
+
 
         
     </script>

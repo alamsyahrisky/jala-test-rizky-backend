@@ -170,7 +170,7 @@
 
 @push('addon-script')
 <script>
-    $(".input-qty").on('keyup', function(e) {
+    $(".input-qty").on('change', function(e) {
         let id = $(this).data('id')
         let qty = $(this).val();
         let element = $(this);
